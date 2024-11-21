@@ -6,6 +6,7 @@ namespace NovikovaNastya_lab4
     class FactorialCalculator
     {
         
+
         public bool CalculateFactorial(int n, out long result)
         {
             result = 1; 
@@ -67,8 +68,8 @@ namespace NovikovaNastya_lab4
 
         static void Main(string[] args)
         {
-        Console.WriteLine("Упражнение 5.1");
-        // метод для вычисления НОД трех натуральных чисел    
+        Console.WriteLine("Упражнеие 5.1");
+        // Наибольшее из двух чисел  
         Console.WriteLine("Тестирование метода Max:");
 
            
@@ -121,6 +122,7 @@ namespace NovikovaNastya_lab4
             }
         Console.ReadLine();
 
+        
 
         Console.WriteLine("Упражнение 5.3");
         //Написать метод вычисления факториала числа, результат вычислений передавать в выходном параметре.
@@ -128,14 +130,14 @@ namespace NovikovaNastya_lab4
         //Для отслеживания переполнения значения использовать блок checked.
 
         Console.WriteLine("Введите число для вычисления факториала:");
-        string input = Console.ReadLine();
+        string input3 = Console.ReadLine();
 
-        if (int.TryParse(input, out int number) && number >= 0)
+        if (int.TryParse(input3, out int number3) && number3 >= 0)
         {
             FactorialCalculator calculator = new FactorialCalculator();
-            if (calculator.CalculateFactorial(number, out long factorial))
+            if (calculator.CalculateFactorial(number3, out long factorial))
             {
-                Console.WriteLine($"Факториал {number} равен {factorial}");
+                Console.WriteLine($"Факториал {number3} равен {factorial}");
             }
             else
             {

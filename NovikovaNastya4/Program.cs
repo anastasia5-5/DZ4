@@ -5,18 +5,7 @@ namespace NovikovaNastya4
 {
     internal class Program
     {
-        static long Factorial(int n)
-        {
-            
-            if (n == 0 || n == 1)
-            {
-                return 1;
-            }
-            else
-            {
-                return n * Factorial(n - 1);
-            }
-        }
+        
 
         private int[] numbers;
 
@@ -113,76 +102,11 @@ namespace NovikovaNastya4
             program.PrintArray();
 
             Console.ReadLine();
+
+
+
+
         
-
-        Console.WriteLine("Упражнение 5.4");
-        //Написать рекурсивный метод вычисления факториала числа.
-
-
-        Console.WriteLine("Введите неотрицательное целое число для вычисления его факториала:");
-        string input = Console.ReadLine();
-
-        if (int.TryParse(input, out int number) && number >= 0)
-        {
-            long factorial = Factorial(number); 
-            Console.WriteLine($"Факториал {number} равен {factorial}");
-        }
-        else
-        {
-            Console.WriteLine("Ошибка: введено некорректное число. Введите неотрицательное целое число.");
-        }
-        Console.ReadLine() ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-        Console.WriteLine("Упражнение 5.3");
-        //Пользователь вводит числа. Если числа от 0 до 9, то необходимо в консоли нарисовать изображение цифры
-        //в виде символа #.Если число больше 9 или меньше 0, то консоль должна окраситься в красный цвет на 3 секунды и вывести сообщение об ошибке.
-        //Если пользователь ввёл не цифру, то программа должна выпасть в исключение. Программа завершает работу, если пользователь введёт слово: exit или закрыть (оба варианта должны сработать) - консоль закроется.
-
-        while (true)
-        {
-            Console.WriteLine("Введите число от 0 до 9 или 'exit'/'закрыть' для выхода:");
-
-            string input2 = Console.ReadLine();
-
-            if (input2.Equals("exit", StringComparison.OrdinalIgnoreCase) ||input.Equals("закрыть", StringComparison.OrdinalIgnoreCase))
-            {
-                break; 
-            }
-
-            try
-            {
-                int number2 = int.Parse(input2);
-
-                if (number2 >= 0 && number2 <= 9)
-                {
-                   DrawDigit(number);
-                }
-                else
-                {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.Clear(); 
-                    Console.WriteLine("Ошибка: число должно быть от 0 до 9.");
-                    System.Threading.Thread.Sleep(3000); 
-                    Console.ResetColor(); 
-                }
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Ошибка: введено не число.");
-            }
-        }
     }
 
         static void DrawDigit(int digit)
